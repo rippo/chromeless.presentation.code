@@ -1,23 +1,23 @@
-Running the following
+Navigate to the following directory
 
 ```
 $ cd ./Grabs
 ```
 
-Outputs a screenshot of the google home page
+01 Outputs a screenshot of the google home page
 -
 ```
 $node grab01.js
 ```
 
-Performs a google search and grabs a screenhot of the results
+02 Performs a google search and grabs a screenhot of the results
 -
 ```
 $ node grab02.js
 ```
 
 
-Outputs a screenshot from my local site based on the ip address
+03 Outputs a screenshot from my local site based on the ip address
 ---
 Now run
 ````
@@ -65,10 +65,11 @@ Show the screenshot notice it is ok
 
 However this is not a recommended as I would like to pass this info in via the CLI
 
-Pass in args via the CLI
+04 Pass in args via the CLI
 -
 Now run
 ````
 $ node grab04.js --url=http://192.168.200.6:43504
-$ \\Where IP is the host IP address of the machine
+
+$ Change ip address to the HOST ip
 ````

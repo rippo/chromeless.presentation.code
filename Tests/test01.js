@@ -1,12 +1,12 @@
 const { Chromeless } = require('chromeless')
 const { expect } = require('chai')
-const options = require('yargs-parser')(process.argv.slice(2))
+const argsparser  = require('yargs-parser')
 
 describe('When visiting my fantastically designed website it', function () {
 
     //increase as mocha has a 2 second set by default
     this.timeout(10000);
-    //const options = args(process.argv.slice(2))
+    const options = argsparser(process.argv.slice(2))
     const chromeless = new Chromeless()
 
     it('shows the correct page title', async function () {
@@ -24,8 +24,6 @@ describe('When visiting my fantastically designed website it', function () {
 
         await chromeless.end()
     })
-
-
 
 })
 
