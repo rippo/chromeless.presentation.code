@@ -1,3 +1,5 @@
+mocha test01.js --url=http://localhost:43504
+
 show demo
 https://chromeless.netlify.com
 
