@@ -4,17 +4,15 @@ const { expect } = require('chai').use(require('chai-string'))
 const AccountLoginPage = require('./account.login.page')
 const options = require('yargs-parser')(process.argv.slice(2))
 
-describe('When trying to login', function () {
+describe('When trying to login as an unknown user', function () {
 
     this.timeout(10000)
-
-
     var chromeless = new Chromeless()
 
     var page = new AccountLoginPage(chromeless, options)
-    page.visit()
 
     it('check we start on the login page', async function () {
+        page.visit()
         const ok = await page.checkWeAreOnTheAccountPage()
         expect(ok).to.be.true
     })
@@ -32,18 +30,15 @@ describe('When trying to login', function () {
         expect(ok).to.be.true
     })
     
-    it ('when submitting a unknown user', async function() {
+    it ('when submitting a invalid user check that the unknown user message is displayed', async function() {
+        page.visit() //clears the validation!
         await page.fillInTheUsername('unknown@test.com')
         await page.fillInThePassword('abc')
         await page.submitTheForm()
+        const ok = await page.checkUserNameNotFoundIsShown()
+        expect(ok).to.be.true
     })
 
-    it('ff', async function(){
-        console.log(await page.checkUserNameNotFoundIsShown())
-    })
-
-
-    //Screen ?
 
     after(async function () {
         const screenshot = await chromeless.screenshot()

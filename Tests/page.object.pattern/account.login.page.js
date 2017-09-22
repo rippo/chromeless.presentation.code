@@ -6,6 +6,7 @@ var AccountLoginPage = function (chromeless, options) {
     this.usernameLocator = 'input[id="Username"]'
     this.passwordLocator = 'input[id="Password"]'
     this.submitButtonLocator = 'form input[type="submit"]'
+    this.inputWithValidationErrorLocator = 'input.input-validation-error'
     this.usernameRequiredValidationLocator = '.field-validation-error[data-valmsg-for="Username"]'
     this.passwordRequiredValidationLocator = '.field-validation-error[data-valmsg-for="Password"]'
     this.page = '/account'
@@ -41,23 +42,30 @@ AccountLoginPage.prototype.submitTheForm = async function () {
 
 AccountLoginPage.prototype.checkUserNameValidationIsShown = async function () {
     return await this.chromeless
-        .wait('input.input-validation-error')
+        .wait(this.inputWithValidationErrorLocator)
         .exists(this.usernameRequiredValidationLocator)
 }
 
 AccountLoginPage.prototype.checkPasswordValidationIsShown = async function () {
     return await this.chromeless
-        .wait('input.input-validation-error')
+        .wait(this.inputWithValidationErrorLocator)
         .exists(this.passwordRequiredValidationLocator)
 }
 
 AccountLoginPage.prototype.checkUserNameNotFoundIsShown = async function () {
     return await this.chromeless
-        .wait('input.input-validation-error')
-        .evaluate(() => 
-                document.getElementById('Username')
-                    
-                )
+        .wait(this.inputWithValidationErrorLocator)
+        .evaluate(() =>
+            document.getElementsByClassName('field-validation-error')[0]
+                .innerHTML === 'User could not be found'
+        )
+}
+
+AccountLoginPage.prototype.fullLogin = async function(username, password) {
+    this.visit();
+    this.fillInTheUsername(username)
+    this.fillInThePassword(password)
+    this.submitTheForm()
 }
 
 module.exports = AccountLoginPage
