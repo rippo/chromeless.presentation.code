@@ -1,13 +1,18 @@
-Notes
----
+# Notes
+
 We use mocha and chai as the test/assertion libraries.
 
 Mocha is a feature-rich JavaScript test framework running on Node.js and in the browser. https://mochajs.org/
 
 Chai is a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework. http://chaijs.com/
 
-Setup
----
+## 1. Setup
+
+````
+$ npm-install -g mocha
+$ npm-install -g chai
+````
+
 If not already running docker
 
 ````
@@ -23,21 +28,20 @@ $ cd .\Tests
 Tests
 -
 
-01 Opens localhost site and evaluates title is correct
--
+## 2. Opens localhost site and evaluates title is correct
 
 ```
 $ mocha test01.js --url=http://192.168.200.6:43504
 ```
 
-02 Shows how we can use before/after (aka setup/teardown )
--
+## 3. Shows how we can use before/after (aka setup/teardown )
+
 ```
-$ mocha test01.js --url=http://192.168.200.6:43504
+$ mocha test02.js --url=http://192.168.200.6:43504
 ```
 
-03 Shows how we can login as a user
--
+## 4. Shows how we can login as a user
+
 ```
 $ mocha test03.js --url=http://192.168.200.6:43504
 ```
