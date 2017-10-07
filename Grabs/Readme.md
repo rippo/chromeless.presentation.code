@@ -4,19 +4,18 @@ Navigate to the following directory
 $ cd ./Grabs
 ```
 
-1. Outputs a screenshot of the google home page
-
+## 1. Outputs a screenshot of the google home page
 ```
 $node grab01.js
 ```
 
-2. Performs a google search and grabs a screenhot of the results
+## 2. Performs a google search and grabs a screenhot of the results
 
 ```
 $ node grab02.js
 ```
 
-3. Outputs a screenshot from my local site based on the ip address
+## 3. Outputs a screenshot from my local site based on the ip address
 Now run
 ````
 $ ..\iis.bat
@@ -61,9 +60,9 @@ Show the screenshot notice it is ok
 
 However this is not a recommended as I would like to pass this info in via the CLI
 
-4. Pass in args via the CLI
+## 4. Pass in args via the CLI
 
-Now run
+Now run:-
 ````
 $ npm i yargs-parser
 $ node grab04.js --url=http://192.168.200.6:43504
