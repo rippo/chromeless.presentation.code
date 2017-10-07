@@ -9,7 +9,7 @@ async function run() {
         .type('richard wilde bromyard uk', 'input[name="q"]')
         .press(13)
         .wait('#resultStats')
-        .screenshot("#rcnt", { filepath: 'd:/_tmp/google.png' })
+        .screenshot("#rcnt")
 
     console.log('\n  Grab: ' + screenshot)
 

@@ -1,7 +1,7 @@
 const { Chromeless } = require('chromeless')
 
-//const ip = "localhost"
-const ip = "192.168.200.6"
+const ip = "localhost"
+//const ip = "192.168.200.6"
 
 async function run() {
 
@@ -9,7 +9,7 @@ async function run() {
 
     const screenshot = await chromeless
         .goto('http://' + ip + ':43504')
-        .screenshot({ filepath: 'd:/_tmp/google.png' })
+        .screenshot()
 
     console.log('\n  Grab: ' + screenshot)
 

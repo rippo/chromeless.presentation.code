@@ -10,7 +10,7 @@ async function run() {
 
     const screenshot = await chromeless
         .goto(options.url)
-        .screenshot({ filepath: 'd:/_tmp/google.png' })
+        .screenshot()
 
     console.log(screenshot)
 
