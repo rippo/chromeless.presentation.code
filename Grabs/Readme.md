@@ -31,7 +31,13 @@ $ chrome --remote-debugging-port=9222 --disable-gpu --headless
 
 However if I do this then the only way I can see to close down the headless chrome is to reboot my machine.
 
-So there is another way, use docker, so run
+So there is another way, use docker, so pull do the docker container
+
+```
+$ docker pull yukinying/chrome-headless-browser
+```
+
+and run
 
 ```
 $ ..\start-chromeless.bat
