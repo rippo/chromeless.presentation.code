@@ -25,7 +25,6 @@ Navigate to the following directory
 $ cd .\Tests
 ```
 ## Tests
--
 
 ### 1. Opens localhost site and evaluates title is correct
 
