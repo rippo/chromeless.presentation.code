@@ -41,8 +41,8 @@ describe('When trying to login as an unknown user', function () {
 
 
     after(async function () {
-        const screenshot = await chromeless.screenshot()
-        console.log('\n  Grab: ' + screenshot)
+        //const screenshot = await chromeless.screenshot()
+        //console.log('\n  Grab: ' + screenshot)
         await chromeless.end()
     })
 

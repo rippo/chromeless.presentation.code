@@ -10,6 +10,8 @@ describe('When logging in as test1@test.com', function () {
     this.timeout(10000)
     var chromeless = new Chromeless(/*{debug: true}*/)
 
+    //console.log(options);
+
     var loginPage = new AccountLoginPage(chromeless, options)
     var searchPage = new AccountSearchPage(chromeless, options)
 
