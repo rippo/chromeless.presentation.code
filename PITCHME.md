@@ -13,16 +13,15 @@ Ask me questions: @rippo
 https://chromeless.netlify.com 
 
 ---
-
 # Installation
 
-## To install chromeless
+### To install chromeless
 Make sure you have Node v8.2 or higher https://nodejs.org/en/ 
 ````
 $ node --version
 $ git clone https://github.com/graphcool/chromeless.git
 ````
-**IMPORTANT** make sure you chnange directory to chromeless
+**IMPORTANT** make sure you change directory to chromeless
 ````
 $ cd chromeless
 $ npm install
