@@ -5,7 +5,7 @@ async function run() {
     const chromeless = new Chromeless()
 
     const screenshot = await chromeless
-        .goto('http://www.google.com')
+        .goto('https://www.google.com')
         .screenshot()
 
     console.log('\n  Grab: ' + screenshot)
