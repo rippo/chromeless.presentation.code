@@ -1,6 +1,6 @@
 # Chromeless presenation
 
-Send me twetts via [@rippo](https://twitter.com/rippo)
+Send me tweets via [@rippo](https://twitter.com/rippo)
 
 ## Online play area
 https://chromeless.netlify.com
@@ -23,7 +23,7 @@ $ npm run build
 
 Npm link chromeless
 ---
-So you do not need to install into every one of your projects.
+So you do not need to install into every one of your projects
 ````
 $ npm link
 $ cd ../myproject  <- go to folder where you want run chromeless
