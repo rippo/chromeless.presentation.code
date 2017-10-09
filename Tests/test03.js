@@ -23,7 +23,7 @@ describe('When trying to login', function () {
         expect(href).to.endsWith('/account')
     })
 
-    it('check login page has correct title', async function () {
+    it('check login page has correct h1 tag', async function () {
         const title = await chromeless
             .evaluate(title => document.querySelector('h1').innerHTML)
         expect(title).to.equal('Login')
@@ -31,6 +31,7 @@ describe('When trying to login', function () {
 
     it('when submitting a blank form check we are still on the account page', async function () {
         const href = await chromeless
+            //For failure uncomment
             //.type('rippo', 'input[Id="Username"]')
             .click('input[type="submit"]')
             .wait(".field-validation-error[data-valmsg-for='Password']")

@@ -43,15 +43,16 @@ echo "Running tests on url $URL using mocha reporter $REPORTER"
 concurrently -r \
   "mocha test.login.as.test1.js --url=$URL --reporter $REPORTER" \
   "mocha test.login.as.test2.js --url=$URL --reporter $REPORTER" \
-  "mocha test.login.as.test1.js --url=$URL --reporter $REPORTER" \
-  "mocha test.login.as.test2.js --url=$URL --reporter $REPORTER" \
-  "mocha test.login.as.test1.js --url=$URL --reporter $REPORTER" \
-  "mocha test.login.as.test2.js --url=$URL --reporter $REPORTER" \
-  "mocha test.login.as.test1.js --url=$URL --reporter $REPORTER" \
-  "mocha test.login.as.test2.js --url=$URL --reporter $REPORTER" \
   "mocha test.login.as.unknown.user.js --url=$URL --reporter $REPORTER" \
-  "mocha test.login.that.fails.js --url=$URL --reporter $REPORTER" \
+  #"mocha test.login.as.test1.js --url=$URL --reporter $REPORTER" \
+  #"mocha test.login.as.test2.js --url=$URL --reporter $REPORTER" \
+  #"mocha test.login.as.test1.js --url=$URL --reporter $REPORTER" \
+  #"mocha test.login.as.test2.js --url=$URL --reporter $REPORTER" \
+  #"mocha test.login.as.test1.js --url=$URL --reporter $REPORTER" \
+  #"mocha test.login.as.test2.js --url=$URL --reporter $REPORTER" \
 #>> "$OUTFILE"
+
+  #"mocha _test.login.that.fails.js --url=$URL --reporter $REPORTER" \
 
 #clear
 #sort "$OUTFILE"

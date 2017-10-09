@@ -61,7 +61,7 @@ At this point you now have linked chromeless into your project folder
 
 ````
 $ cd .\grabs
-$ node grab.js
+$ node grab01.js
 ````
 
 ---
@@ -97,7 +97,10 @@ chrome --remote-debugging-port=9222 --disable-gpu --headless
 https://hub.docker.com/r/yukinying/chrome-headless-browser/
 
 ````
-docker run --init -it --rm --name chrome --shm-size=1024m -d -p 9222:9222 --cap-add=SYS_ADMIN yukinying/chrome-headless-browser --headless --disable-gpu --hide-scrollbars --window-size=1280,800
+docker run --init -it --rm --name chrome 
+  --shm-size=1024m -d -p 9222:9222 --cap-add=SYS_ADMIN 
+  yukinying/chrome-headless-browser --headless 
+  --disable-gpu --hide-scrollbars --window-size=1280,800
 ````
 
 ---
@@ -131,12 +134,97 @@ $ node grab03.js
 $ node grab04.js --url=http://192.168.200.6:43504
 ````
 
+e.g.
+````
+$ node grab04.js --url=http://192.168.200.6:43504 
+    --username=foo --password=abc
+````
 
 ---
+
+# Lets run a test!
+
+We use mocha and chai as the test/assertion libraries.
+
+Mocha is a feature-rich JavaScript test framework running on Node.js and in the browser. https://mochajs.org/
+
+Chai is a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework. http://chaijs.com/
+
+````
+$ npm-install -g mocha
+$ npm-install -g chai
+````
+
+---
+
+# Test 01
+
+Opens localhost site and evaluates title is correct
+
+````
+$ cd ..\Tests
+$ mocha test01.js --url=http://192.168.200.6:43504
+````
+Hoorah a pass!
+
+---
+
+# Test 02
+
+Shows how we can use before/after (aka setup/teardown )
+
+````
+$ mocha test02.js --url=http://192.168.200.6:43504
+````
+
+---
+
+# Test 03
+
+Lets login as a user
+
+````
+$ mocha test03.js --url=http://192.168.200.6:43504
+````
+
+---
+
+# Can we use the Page Object model?
+
+This runs all test files that begins with the word test
+````
+$ mocha test*.js --url=http://192.168.200.6:43504
+````
+---
+
+# Well its not that fast!
+
+We can use a docker container that I installed node, chromeless, required node modules, concurrently
+
+````
+$ docker run -it -p 9222:9222 
+     -v D:\Projects\Node\Source\chromeless.presentation.code:/data 
+     -w /data/Tests/page.object.pattern
+     --cap-add=SYS_ADMIN rippo/chrome-headless bash
+
+$ ./all.sh
+````
+
+---
+
+# But wait the output is screwy?
+
+We can have different mocha reporters... 
+
+REPORTER="min"   #Runs with minimum output
+
+````
+$ time ./all.sh
+````
+
 
 ---
 
 # What is Serverless?
 
----
 
