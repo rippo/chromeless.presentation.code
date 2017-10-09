@@ -17,15 +17,20 @@ https://chromeless.netlify.com
 ---
 # Installation
 
-### To install chromeless
+To install chromeless
+
 Make sure you have Node v8.2 or higher
 https://nodejs.org/en/ 
+
 ````
 $ node --version
 $ git clone 
 ````
 
 https://github.com/graphcool/chromeless.git
+
+---
+# Installation
 
 **IMPORTANT** make sure you change directory to chromeless
 ````
@@ -76,15 +81,15 @@ Also we took a screen grab.
 - take a screen grab of the results
 
 ---
-# Demo 3: What If I don't want to see a browser?
+# Demo 3: But headless right?
 
-To run chromeless in headless mode you can...
+To run chromeless in headless mode you can
 ````
 $ C:\Program Files (x86)\Google\Chrome\Application
 chrome --remote-debugging-port=9222 --disable-gpu --headless
 ````
 
-Problem is if I do this then I will not be able to work out which process to close unless I reboot or kill all Chrome processes!
+*Problem is if I do this then I will not be able to work out which process to close unless I reboot or kill all Chrome processes!*
 
 ---
 # Can docker come to our rescue?
