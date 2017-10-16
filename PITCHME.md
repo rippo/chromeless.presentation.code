@@ -85,8 +85,8 @@ Also we took a screen grab.
 
 To run chromeless in headless mode you can
 ````
-$ C:\Program Files (x86)\Google\Chrome\Application
-chrome --remote-debugging-port=9222 --disable-gpu --headless
+$ C:\Program Files (x86)\Google\Chrome\Application\chrome 
+    --remote-debugging-port=9222 --disable-gpu --headless
 ````
 
 *Problem is if I do this then I will not be able to work out which process to close unless I reboot or kill all Chrome processes!*
@@ -104,10 +104,18 @@ docker run --init -it --rm --name chrome
 ````
 
 ---
-#TIP: Throw that into a bat file!
+# TIP: Throw that into a bat file! 
 
 ````
 $ ..\start-chromeless.bat
+````
+
+What went wrong?
+
+---
+ # Lets test my local site!
+
+````
 $ node grab03.js  //fingers crossed!
 ````
 
@@ -116,7 +124,7 @@ What went wrong?
 ---
 # When is local not local?
 
-**TIP:** localhost referes to the local docker instance!
+**TIP:** localhost refers to the local docker instance!
 
 ````
 //const ip = "localhost"
@@ -142,13 +150,22 @@ $ node grab04.js --url=http://192.168.200.6:43504
 
 ---
 
-# Lets run a test!
+# But we are here to leatn about testing!
 
 We use mocha and chai as the test/assertion libraries.
+----
 
-Mocha is a feature-rich JavaScript test framework running on Node.js and in the browser. https://mochajs.org/
+# Mocha 
 
-Chai is a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework. http://chaijs.com/
+is a feature-rich JavaScript test framework running on Node.js and in the browser. https://mochajs.org/
+
+# Chai 
+
+is a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework. http://chaijs.com/
+
+----
+
+# To install simply
 
 ````
 $ npm-install -g mocha
