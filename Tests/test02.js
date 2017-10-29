@@ -16,7 +16,6 @@ describe('When visiting my fantastically designed website it', function () {
             .goto(options.url)
             .setViewport({ width: 1200, height: 800, scale: 1 })
             .screenshot()
-
     });
 
     it('shows the correct page title', async function () {

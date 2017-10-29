@@ -10,6 +10,10 @@ Ask me questions: @rippo
 
 ---
 
+# What do you mean Chromeless?
+
+---
+
 # A play area?
 
 https://chromeless.netlify.com 
@@ -24,10 +28,10 @@ https://nodejs.org/en/
 
 ````
 $ node --version
-$ git clone 
+$ git clone https://github.com/graphcool/chromeless.git
 ````
 
-https://github.com/graphcool/chromeless.git
+
 
 ---
 # Installation
@@ -81,7 +85,7 @@ Also we took a screen grab.
 - take a screen grab of the results
 
 ---
-# Demo 3: But headless right?
+# Demo 2: But headless right?
 
 To run chromeless in headless mode you can
 ````
@@ -89,7 +93,7 @@ $ C:\Program Files (x86)\Google\Chrome\Application\chrome
     --remote-debugging-port=9222 --disable-gpu --headless
 ````
 
-*Problem is if I do this then I will not be able to work out which process to close unless I reboot or kill all Chrome processes!*
+> Problem is if I do this then I will not be able to work out which process to close unless I reboot or kill all Chrome processes!
 
 ---
 # Can docker come to our rescue?
@@ -108,9 +112,8 @@ docker run --init -it --rm --name chrome
 
 ````
 $ ..\start-chromeless.bat
+$ node grab02.js
 ````
-
-What went wrong?
 
 ---
  # Lets test my local site!
@@ -150,22 +153,29 @@ $ node grab04.js --url=http://192.168.200.6:43504
 
 ---
 
-# But we are here to leatn about testing!
+# But we are here to learn about testing!
 
-We use mocha and chai as the test/assertion libraries.
-----
+I am using mocha and chai as the test/assertion libraries.
+
+---
 
 # Mocha 
 
-is a feature-rich JavaScript test framework running on Node.js and in the browser. https://mochajs.org/
+is a feature-rich JavaScript test framework running on Node.js and in the browser.
+
+https://mochajs.org/
+
+---
 
 # Chai 
 
-is a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework. http://chaijs.com/
+is a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework. 
 
-----
+http://chaijs.com/
 
-# To install simply
+---
+
+# To install
 
 ````
 $ npm-install -g mocha
@@ -188,7 +198,9 @@ Hoorah a pass!
 
 # Test 02
 
-Shows how we can use before/after (aka setup/teardown )
+Shows how we can use before/after
+
+aka setup/teardown
 
 ````
 $ mocha test02.js --url=http://192.168.200.6:43504
@@ -210,6 +222,7 @@ $ mocha test03.js --url=http://192.168.200.6:43504
 
 This runs all test files that begins with the word test
 ````
+$ cd page.object.pattern
 $ mocha test*.js --url=http://192.168.200.6:43504
 ````
 ---
@@ -219,9 +232,10 @@ $ mocha test*.js --url=http://192.168.200.6:43504
 We can use a docker container that I installed node, chromeless, required node modules, concurrently
 
 ````
+$ ..\..\stop-chromeless.bat
 $ docker run -it -p 9222:9222 
      -v D:\Projects\Node\Source\chromeless.presentation.code:/data 
-     -w /data/Tests/page.object.pattern
+     -w /data/watch
      --cap-add=SYS_ADMIN rippo/chrome-headless bash
 
 $ ./all.sh
