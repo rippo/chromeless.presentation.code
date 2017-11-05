@@ -1,22 +1,17 @@
 {
   "0": {
     "index": 0,
-    "filename": "../Tests/page.object.pattern/_test.login.that.fails.js",
-    "passes": 1
+    "filename": "../Tests/page.object.pattern/test.login.as.test1.js",
+    "passes": 5
   },
   "1": {
     "index": 1,
-    "filename": "../Tests/page.object.pattern/test.login.as.test1.js",
-    "passes": 1
+    "filename": "../Tests/page.object.pattern/test.login.as.test2.js",
+    "passes": 4
   },
   "2": {
     "index": 2,
-    "filename": "../Tests/page.object.pattern/test.login.as.test2.js",
-    "passes": 1
-  },
-  "3": {
-    "index": 3,
     "filename": "../Tests/page.object.pattern/test.login.as.unknown.user.js",
-    "passes": 0
+    "passes": 4
   }
 }

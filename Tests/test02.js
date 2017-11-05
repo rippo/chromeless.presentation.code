@@ -14,7 +14,7 @@ describe('When visiting my fantastically designed website it', function () {
         chromeless = new Chromeless();
         screen = await chromeless
             .goto(options.url)
-            .setViewport({ width: 1200, height: 800, scale: 1 })
+            .setViewport({ width: 600, height: 600, scale: 1 })
             .screenshot()
     });
 
@@ -26,7 +26,6 @@ describe('When visiting my fantastically designed website it', function () {
             })
 
         expect(pageTitle).to.equal('Home - CasperJS Mvc')
-
     })
 
     it('shows the correct text inside the h1 jumbotron', async function () {
@@ -37,7 +36,6 @@ describe('When visiting my fantastically designed website it', function () {
             })
 
         expect(jumbotronH1).to.equal('CasperJS Testing')
-
     })
 
 

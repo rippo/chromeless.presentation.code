@@ -12,7 +12,7 @@ async function run() {
         .goto(options.url)
         .screenshot()
 
-    console.log(screenshot)
+    console.log("\n  Grab: " + screenshot)
 
     await chromeless.end()
 

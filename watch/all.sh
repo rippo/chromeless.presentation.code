@@ -4,7 +4,7 @@ clear
 
 #Settings
 OUTFILE="results.log"
-URL="http://192.168.200.6:43504/"
+URL="http://192.168.200.9:43504/"
 REPORTER="spec"
 TESTDIR="../Tests/page.object.pattern"
 #min|dot|json|json-stream|nyan
@@ -13,6 +13,7 @@ TESTDIR="../Tests/page.object.pattern"
 
 #remove old log file
 rm -f $OUTFILE
+rm -f "results.json"
 
 #should we kill any extra chrome processes?
 numproc="$(ps -ef | grep -v grep | grep chrome | wc -l)"
@@ -38,15 +39,14 @@ echo "Running tests on url $URL using mocha reporter $REPORTER"
 #Run tests using npm concurrently
 #Remember IIS express might barf so may want to limit to around 10 tests!
 concurrently \
-  "mocha $TESTDIR/_test.login.that.fails.js --url=$URL --reporter $REPORTER" \
   "mocha $TESTDIR/test.login.as.test1.js --url=$URL --reporter $REPORTER" \
   "mocha $TESTDIR/test.login.as.test2.js --url=$URL --reporter $REPORTER" \
   "mocha $TESTDIR/test.login.as.unknown.user.js --url=$URL --reporter $REPORTER" \
-  #> $OUTFILE
+  > $OUTFILE
 
-  #"mocha $TESTDIR/test.login.as.test2.js --url=$URL --reporter $REPORTER" \
+  #"mocha $TESTDIR/_test.login.that.fails.js --url=$URL --reporter $REPORTER" \
 
-#node process.js
+node process.js
 
 
   

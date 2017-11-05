@@ -23,6 +23,7 @@
         "yargs-parser": "^7.0.0"
     },
     "devDependencies": {
+        "@types/node": "^8.0.47",
         "mocha-teamcity-reporter-v2": "^2.0.3"
     }
 }
