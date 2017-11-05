@@ -320,7 +320,8 @@ $ mocha --timeout 10000 ./runner.js tests\test*.js
 ---
 # Pros Puppeteer
 
-- Maintained by GoogleChrome team
+- Activly maintained by GoogleChrome team
+- VERY easy to get up and running
 - Seems all new JS libraries going to use puppeteer under the hood
 - Has a nice API!
 ---
