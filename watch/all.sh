@@ -42,11 +42,11 @@ concurrently \
   "mocha $TESTDIR/test.login.as.test1.js --url=$URL --reporter $REPORTER" \
   "mocha $TESTDIR/test.login.as.test2.js --url=$URL --reporter $REPORTER" \
   "mocha $TESTDIR/test.login.as.unknown.user.js --url=$URL --reporter $REPORTER" \
-  > $OUTFILE
+  #> $OUTFILE
 
   #"mocha $TESTDIR/_test.login.that.fails.js --url=$URL --reporter $REPORTER" \
 
-node process.js
+#node process.js
 
 
   
