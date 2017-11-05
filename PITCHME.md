@@ -1,17 +1,21 @@
 # Richard Wilde 
 
-Headless Chrome and Chromeless
+## The Future?
+
+Headless Chrome
 
 Ask me questions: @rippo
 
 ---
 
-# What do you mean headless Chrome?
+# Chromeless
 
----
+What do you mean Chromeless?
 
-# What do you mean Chromeless?
-
+ - Write bots/test against a real browser
+ - Do pretty much everything you've used PhantomJS, NightmareJS or Selenium for before
+ - Crawl the web & automate screenshots
+ - Run 1000s of browser integration tests in parallel 
 ---
 
 # A play area?
@@ -234,7 +238,7 @@ We can use a docker container that I installed node, chromeless, required node m
 ````
 $ ..\..\stop-chromeless.bat
 $ docker run -it -p 9222:9222 
-     -v D:\Projects\Node\Source\chromeless.presentation.code:/data 
+     -v D:\Projects\Presentations\chromeless.presentation.code:/data 
      -w /data/watch
      --cap-add=SYS_ADMIN rippo/chrome-headless bash
 
@@ -252,10 +256,81 @@ REPORTER="min"   #Runs with minimum output
 ````
 $ time ./all.sh
 ````
+---
 
+# Lets get cute with Grunt
+
+````
+$ cd D:\Projects\Presentations\chromeless.presentation.code
+$ grunt server
+````
 
 ---
 
-# What is Serverless?
+# But you promised 1000's of tests
 
+What is Serverless?
 
+Serverless is your toolkit for deploying and operating serverless architectures
+
+---
+
+# Pros Chromeless
+
+- Fairly easy to get up and running
+- Lots of people are excited!
+- Plumb in own JS node testing framework
+- Can run on AWS
+- Can run in parallel
+---
+
+# Cons Chromless
+
+- Lots moving parts
+- Code update seems to have slowed down lately
+- Some bugs in promises that need to be sorted
+
+---
+
+# What about Puppeteer?
+
+Puppeteer is a Node library which provides a high-level API to control headless Chrome over the DevTools Protocol. It can also be configured to use full (non-headless) Chrome.
+
+---
+
+# Installation
+
+https://medium.com/@ivanmontiel/using-that-headless-chrome-youve-been-hearing-about-543a8cc07af5
+
+````
+$ yarn init
+$ yarn install --dev puppeteer mocha chai
+````
+
+---
+
+# DEMO: Puppeteer
+
+````
+$ cd D:\Projects\Presentations\puppeteer
+$ code .
+$ mocha --timeout 10000 ./runner.js tests\test*.js
+````
+
+---
+# Pros Puppeteer
+
+- Maintained by GoogleChrome team
+- Seems all new JS libraries going to use puppeteer under the hood
+- Has a nice API!
+---
+
+# Cons Chromless
+
+- Let me get back to you on that!
+
+---
+
+# Thanks for listening to my ramble
+
+Ask me questions on twitter @rippo
