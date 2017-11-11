@@ -7,7 +7,7 @@ const options = require('yargs-parser')(process.argv.slice(2))
 
 describe('When logging in as test3@test.com', function () {
 
-    this.timeout(10000)
+    this.timeout(4000)
     var chromeless = new Chromeless(/*{debug: true}*/)
 
     var loginPage = new AccountLoginPage(chromeless, options)
@@ -22,6 +22,14 @@ describe('When logging in as test3@test.com', function () {
         expect(ok).to.be.true
     })
 
+
+    //hack until this fix gets implemented
+    //https://github.com/graphcool/chromeless/issues/321#issuecomment-342680644
+    afterEach(function () {
+        chromeless.queue.comandQueue = {};
+        chromeless.queue.lastWaitAll = null;
+        chromeless.lastReturnPromise = null;
+    }); 
   
     after(async function () {
         await chromeless.end()

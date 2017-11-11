@@ -19,7 +19,7 @@
             <div class="col-sm-5 col-sm-offset-2">
                 <div class="alert alert-danger">
                     <h3>FAILS:</h3>
-                    <h1>0</h1>
+                    <h1 id="numFails">0</h1>
                 </div>
             </div>
         </div>
@@ -31,6 +31,14 @@
                     <tr>
                         <th>File</th>
                         <th class="text-center">Num Passes</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-5 col-sm-offset-2">
+                <table id="fails" class="table table-striped table-condensed table-bordered">
+                    <tr>
+                        <th>File</th>
+                        <th class="text-center">Num Fails</th>
                     </tr>
                 </table>
             </div>
@@ -56,8 +64,10 @@
             $.getJSON("results.json", function (json) {
 
                 var totalPasses = 0;
+                var totalFails = 0;
 
                 $.each(json, function () {
+
                     totalPasses += this.passes;
                     $('#passes').append(
                         '<tr><td>' +
@@ -65,9 +75,23 @@
                         '</td><td class="text-center">' +
                         this.passes +
                         '</td></tr>');
+
+                    totalFails += this.failures;
+                    if (this.failures > 0) {
+                    $('#fails').append(
+                        '<tr><td>' +
+                        this.filename +
+                        '</td><td class="text-center">' +
+                        this.failures +
+                        '</td></tr>');
+                    }
+
+
+
                 });
 
                 $('#numPasses').html(totalPasses);
+                $('#numFails').html(totalFails);
             });
         })
     </script>

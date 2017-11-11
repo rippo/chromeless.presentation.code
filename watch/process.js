@@ -50,6 +50,20 @@ function getPasses(index) {
         .replace(" passing", ""))
 }
 
+function getFailures(index) {
+    // e.g.  [5]   4 passing (2s)
+
+    //var matcher = "\\[" + index.toString() + "\\]   \\d passing \\(\\ds\\)"
+    var matcher = "\\[" + index.toString() + "\\]      Error: Timeout"
+    var re = new RegExp(matcher, "g")
+    var match = rawcontent.match(re);
+
+    if (match === null)
+        return 0
+
+    return 1
+}
+
 
 //content is an array
 readContent(function (err, content) {
@@ -67,7 +81,8 @@ readContent(function (err, content) {
         results[i] = {
             index: i,
             filename: value,
-            passes: getPasses(i)
+            passes: getPasses(i),
+            failures: getFailures(i)
         }
     })
 
