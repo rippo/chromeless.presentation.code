@@ -300,12 +300,13 @@ Puppeteer is a Node library which provides a high-level API to control headless 
 
 # Installation
 
-https://medium.com/@ivanmontiel/using-that-headless-chrome-youve-been-hearing-about-543a8cc07af5
-
 ````
 $ yarn init
 $ yarn install --dev puppeteer mocha chai
 ````
+
+Good read here
+https://medium.com/@ivanmontiel/using-that-headless-chrome-youve-been-hearing-about-543a8cc07af5
 
 ---
 
@@ -318,20 +319,25 @@ $ mocha --timeout 10000 ./runner.js tests\test*.js
 ````
 
 ---
+
 # Pros Puppeteer
 
-- Activly maintained by GoogleChrome team
-- VERY easy to get up and running
-- Seems all new JS libraries going to use puppeteer under the hood
-- Has a nice API!
----
-
-# Cons Chromless
-
-- Let me get back to you on that!
+- Dead simple to get up and running
+- Lots of people excited
+- Maintained by the Google Chrome Team
+- Chromless/Navalia is talking about plumbing in Puppeteer
+- Large API (and growing)
 
 ---
 
-# Thanks for listening to my ramble
+# Cons Puppeteer
+
+- A bit early to tell yet!
+
+---
+
+# Thanks
+
+## Hope you found this useful!
 
 Ask me questions on twitter @rippo
